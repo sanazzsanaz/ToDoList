@@ -1,4 +1,5 @@
 [tool.poetry]
+<<<<<<< HEAD
 name = "todolist-api"
 version = "1.0.0"
 description = "ToDoList API with FastAPI"
@@ -22,6 +23,23 @@ flake8 = "^6.1.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
+=======
+name = "todolist"
+version = "0.1.0"
+description = "A simple ToDo List application with Python OOP"
+authors = ["Sanaz Aparviz <sanazandsani@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+python-dotenv = "^1.0.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+>>>>>>> 3f64151f94c84d92b417cc31d54f7ae84e9315fd
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
