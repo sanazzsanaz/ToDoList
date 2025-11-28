@@ -1,0 +1,86 @@
+{
+  "info": {
+    "name": "ToDoList API",
+    "description": "Complete API collection for ToDoList project testing",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "{{base_url}}",
+      "type": "string"
+    },
+    {
+      "key": "project_id", 
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "task_id",
+      "value": "",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "{{content_type}}"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/health",
+          "host": ["{{base_url}}"],
+          "path": ["health"]
+        }
+      }
+    },
+    {
+      "name": "Projects",
+      "item": [
+        {
+          "name": "Get All Projects",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "{{content_type}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/{{api_version}}/projects/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "{{api_version}}", "projects", ""]
+            }
+          }
+        },
+        {
+          "name": "Create New Project",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "{{content_type}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"My Project {{$timestamp}}\",\n  \"description\": \"This is a test project created via Postman\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/{{api_version}}/projects/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "{{api_version}}", "projects", ""]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
